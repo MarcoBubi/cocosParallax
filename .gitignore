@@ -1,32 +1,124 @@
-# Prerequisites
-*.d
+# Operating System generated files
+Thumbs.db
+.DS_Store
+desktop.ini
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
+# Visual Studio generated files
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+*.opendb
+*.VC.db
+[Bb]in/
+[Dd]ebug*/ 
+[Rr]elease*/ 
+_ReSharper*/ 
+[Tt]est[Rr]esult* 
+ipch/
+*.vcproj.*.user
+*.vcxproj.user
+*.csproj.user
+*.vspscc
+*_i.c
+*.i
+*.icf
+*_p.c
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.sbr
 *.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
 *.exe
-*.out
-*.app
+*.pdb
+*.aps
+*.vs/
+SubmissionInfo/
+Generated Files/
+AppPackages/
+BundleArtifacts/
+
+# NDK and Eclipse
+/libs/
+/bin/
+/obj/
+/gen/
+/assets/
+/local.properties
+
+# Python compiled files
+*.pyc
+
+# Xcode and other macOS specific
+*.mode*v*
+*.pbxuser
+*.xcbkptlist
+*.xcworkspacedata
+*.xcuserstate
+*.xccheckout
+xcschememanagement.plist
+IDEWorkspaceChecks.plist
+xcuserdata/
+DerivedData/
+
+# AppCode
+.idea/
+
+# Other IDEs and Tools
+**/.project
+**/.classpath
+**/org.eclipse.buildship.core.prefs
+.vscode/
+*.iml
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+CMakeLists.txt.user
+*-build/
+cmake-build-*/
+*.xcscmblueprint
+*.swp
+*.swo
+tags
+
+# Project specific ignores
+projects/
+/tools/tojs/user.cfg
+/tools/tojs/userconf.ini
+/tools/tolua/userconf.ini
+/tools/jenkins_scripts/mac/android/userconf.ini
+/external/*  # Ignoring external libraries
+!/external/config.json  # Except config.json
+/templates/lua-template-runtime/runtime
+/v*-deps-*.zip
+/v*-lua-runtime-*.zip
+/v*-console-*.zip
+/tools/fbx-conv/
+/tests/lua-empty-test/src/cocos/
+/tests/lua-game-controller-test/src/cocos/
+/tests/lua-tests/src/cocos/
+/tests/js-tests/res/
+/tools/framework-compile/bin/proj_modifier/plutil-win32/
+!/tools/framework-compile/bin/
+/templates/*-template-binary/
+/prebuilt/
+/*/prebuilt-mk/Android.mk
+/*/*/prebuilt-mk/Android.mk
+/*/*/*/prebuilt-mk/Android.mk
+/*/*/*/*/prebuilt-mk/Android.mk
+tests/cpp-empty-test/proj.tizen/res/
+tests/cpp-tests/proj.tizen/res/
+tests/lua-empty-test/project/proj.tizen/res/
+tests/lua-tests/project/proj.tizen/res/
+*.zip
+**/simulator/
+tmp/
+temp/
+metal-support*.zip
+/build/
+cocos2d

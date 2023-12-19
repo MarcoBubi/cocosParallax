@@ -13,6 +13,9 @@
     <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\GameScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\AppDelegate.h">
@@ -27,15 +30,6 @@
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\proj.win32\resource.h">
       <Filter>Source Files\proj.win32</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\CloseNormal.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\CloseSelected.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\HelloWorld.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\fonts\Marker Felt.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
@@ -44,6 +38,18 @@
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\CloseNormal.png">
+      <Filter>Resources\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\CloseSelected.png">
+      <Filter>Resources\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\HelloWorld.png">
+      <Filter>Resources\textures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,5 +79,67 @@
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{8BB343DC-D9C2-3F4E-83BF-2CC36B67F3A3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\textures">
+      <UniqueIdentifier>{e1090920-3c9a-4f6e-9902-61ae22ec4591}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\textures\background_1_sky.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_2_sky.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_3_mountains.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_4_mountains.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_5_clouds.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_6_clouds.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_8_bushes.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_9_trees.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_10_trees.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\background_11_road.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\character.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\foreground_0_squirrel.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\foreground_1_bushes.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\foreground_2_tree.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\foreground_3_clouds.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\foreground_4_bench.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\jump_button.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\jump_button_hover.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="..\Resources\textures\jump_button_inactive.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -38,6 +38,11 @@ USING_NS_CC;
 static cocos2d::Size fourKResolution = cocos2d::Size(3840, 2160);
 static cocos2d::Size twoKResolution = cocos2d::Size(2048, 1080);
 static cocos2d::Size designResolutionSize = cocos2d::Size(1920, 1080);
+//static cocos2d::Size designResolutionSize = cocos2d::Size(1600, 900); // 16:9
+//static cocos2d::Size designResolutionSize = cocos2d::Size(1600, 1200); // 4:3
+//static cocos2d::Size designResolutionSize = cocos2d::Size(1800, 900); // 2:1
+//static cocos2d::Size designResolutionSize = cocos2d::Size(2100, 900); // 21:9
+//static cocos2d::Size designResolutionSize = cocos2d::Size(1800, 1200); // 3:2
 static cocos2d::Size fullHDResolutionSize = cocos2d::Size(1920, 1080);
 static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
 static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
@@ -84,14 +89,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
-    // turn on display FPS
-    director->setDisplayStats(true);
-
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
     
-    // Set the design resolution //TODO: rethink this, for now let's set to 2k @mkrevatin
-    glview->setDesignResolutionSize(fullHDResolutionSize.width, fullHDResolutionSize.height, ResolutionPolicy::NO_BORDER);
+    // Set the design resolution //TODO: rethink this, for now let's set to full HD @mkrevatin
+    glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     auto frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.
     if (frameSize.height > mediumResolutionSize.height)

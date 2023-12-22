@@ -23,7 +23,6 @@
  ****************************************************************************/
 
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
 #include "GameScene.h"
 
 // #define USE_AUDIO_ENGINE 1
@@ -37,7 +36,7 @@ USING_NS_CC;
 
 static cocos2d::Size fourKResolution = cocos2d::Size(3840, 2160);
 static cocos2d::Size twoKResolution = cocos2d::Size(2048, 1080);
-static cocos2d::Size designResolutionSize = cocos2d::Size(1920, 1080);
+static cocos2d::Size designResolutionSize = cocos2d::Size(1920, 1080); //this should always be 1920x1080, since the scaling will favour this. Don't change this!
 //static cocos2d::Size designResolutionSize = cocos2d::Size(1600, 900); // 16:9
 //static cocos2d::Size designResolutionSize = cocos2d::Size(1600, 1200); // 4:3
 //static cocos2d::Size designResolutionSize = cocos2d::Size(1800, 900); // 2:1
@@ -116,8 +115,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // create a scene. it's an autorelease object
     auto scene = GameScene::createScene();
 
-    //auto scene = GameScene::createScene();
-    // run
     director->runWithScene(scene);
 
     return true;

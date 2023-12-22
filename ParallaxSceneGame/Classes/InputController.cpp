@@ -1,5 +1,6 @@
 #include "InputController.h"
 #include "ui/CocosGUI.h"
+#include "GameEvents.h"
 
 InputController::InputController(cocos2d::Node* parent, cocos2d::EventDispatcher& eventDispatcher) 
     : _parent(parent), _eventDispatcher(eventDispatcher) {}
@@ -39,7 +40,7 @@ void InputController::onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event)
     auto diff = touch->getDelta();
 
     cocos2d::Vec2* diffData = new cocos2d::Vec2(diff); // Allocate new data to pass with the event
-    cocos2d::EventCustom draggedEvent("EVENT_SCENE_DRAGGED");
+    cocos2d::EventCustom draggedEvent(GameEvents::EVENT_SCENE_DRAGGED);
     draggedEvent.setUserData(static_cast<void*>(diffData));
 
     _eventDispatcher.dispatchEvent(&draggedEvent);

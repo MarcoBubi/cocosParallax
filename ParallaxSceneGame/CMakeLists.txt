@@ -55,10 +55,10 @@ if(APPLE OR WINDOWS)
 endif()
 
 # add cross-platforms source files and header files 
-list(GLOB GAME_SOURCE
+file(GLOB GAME_SOURCE
      Classes/*.cpp
      )
-list(GLOB GAME_HEADER
+file(GLOB GAME_HEADER
      Classes/*.h
      )
 

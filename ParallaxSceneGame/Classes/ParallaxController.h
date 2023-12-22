@@ -23,6 +23,8 @@ public:
 
     cocos2d::ParallaxNode* getParallaxNode(ParallaxLayer layer);
 
+    void scaleSpriteForCurrentResolution(cocos2d::Sprite& sprite);
+
 private:
     cocos2d::Node* _parent;
     cocos2d::EventDispatcher& _eventDispatcher;

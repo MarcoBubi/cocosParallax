@@ -25,14 +25,16 @@ public:
 private:
     cocos2d::Node* _parent;
     cocos2d::Size _visibleSize;
-    cocos2d::Vec2 _origin;
+
+    float _scaleFactorWidth;
+    float _scaleFactorHeight;
+
     std::vector<IResizableUI*> _uiElements;
 
     ScreenType determineScreenType();
 
-    void setupUIForAspectRatio16_9();
-    void setupUIForAspectRatio4_3();
-    void setupUIForAspectRatio5_4();
+    void calculateScaleFactors();
+
     // Additional methods for other aspect ratios
 };
 

@@ -1,27 +1,15 @@
 #include "UIController.h"
 #include "ui/CocosGUI.h"
 
-UIController::UIController(cocos2d::Node* parent) : _parent(parent) 
-{
-    _visibleSize = cocos2d::Director::getInstance()->getVisibleSize();
-    _origin = cocos2d::Director::getInstance()->getVisibleOrigin();
+UIController::UIController(cocos2d::Node* parent) 
+    : _parent(parent), _scaleFactorWidth(1), _scaleFactorHeight(1) {
 }
 
 void UIController::setup() {
+    _visibleSize = cocos2d::Director::getInstance()->getVisibleSize();
     ScreenType screenType = determineScreenType();
-
-    switch (screenType) {
-    case ScreenType::ASPECT_16_9:
-        setupUIForAspectRatio16_9();
-        break;
-    case ScreenType::ASPECT_4_3:
-        setupUIForAspectRatio4_3();
-        break;
-    case ScreenType::ASPECT_5_4:
-        setupUIForAspectRatio5_4();
-        break;
-        // Handle other cases
-    }
+    calculateScaleFactors(); // This will now set the scale factors directly
+    // Other setup code...
 }
 
 void UIController::update(float delta) {
@@ -30,6 +18,9 @@ void UIController::update(float delta) {
 
 void UIController::registerUIElement(IResizableUI* element) {
     _uiElements.push_back(element);
+    // Apply scale factors to the newly added element
+    cocos2d::Size size = { _scaleFactorWidth, _scaleFactorHeight };
+    element->adjustForResolution(size);
 }
 
 void UIController::adjustUIElementsForResolution(const cocos2d::Size& size) {
@@ -53,18 +44,24 @@ UIController::ScreenType UIController::determineScreenType() {
     }
 }
 
-void UIController::setupUIForAspectRatio16_9() {
-    // TODO: move this and implement it properly to work and to do something for the character
-    //setupJumpButton(cocos2d::Vec2(_visibleSize.width / 2 + (_origin.x / 2), 150));
-    // Setup UI for 16:9 screens
-}
+void UIController::calculateScaleFactors() {
+    // Design resolution and aspect ratio
+    cocos2d::Size designResolution(1920, 1080);
+    float designAspectRatio = designResolution.width / designResolution.height;
 
-void UIController::setupUIForAspectRatio4_3() {
-    // Setup UI for 4:3 screens
-}
+    // Current screen resolution and aspect ratio
+    float currentAspectRatio = _visibleSize.width / _visibleSize.height;
 
-void UIController::setupUIForAspectRatio5_4() {
-    // Setup UI for 5:4 screens
+    // Calculate individual scale factors
+    _scaleFactorWidth = _visibleSize.width / designResolution.width;
+    _scaleFactorHeight = _visibleSize.height / designResolution.height;
+
+    // Check if aspect ratios are different
+    if (currentAspectRatio != designAspectRatio) {
+        // Use the smaller scale factor for both dimensions to maintain aspect ratio
+        float uniformScaleFactor = std::min(_scaleFactorWidth, _scaleFactorHeight);
+        _scaleFactorWidth = _scaleFactorHeight = uniformScaleFactor;
+    }
 }
 
 // Additional methods for other aspect ratios

@@ -26,6 +26,8 @@
 cmake_minimum_required(VERSION 3.6)
 
 set(APP_NAME ParallaxSceneGame)
+set(CXX_STANDARD 14) # may be higher, but 14 is enough
+
 project(${APP_NAME})
 
 if(XCODE)

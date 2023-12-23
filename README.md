@@ -1,6 +1,6 @@
 # cocosParallax
 
-SMALL EXPLANATION:
+**SMALL EXPLANATION:** 
 
 
 This code is a simulation of a horizontally parallax scene done in cocosd2-x engine for C++.
@@ -21,7 +21,7 @@ just an image being moved in a time occurency.
 The parallax scene can be used to simulate visual movement and dynamic movements.
 
 
-LOGIC BEHIND THE GAME:
+**LOGIC BEHIND THE GAME:**
 
 This game is just a visual presentation of the parallax system.
 
@@ -31,7 +31,7 @@ The main character of the game is a frog character that watches the scene move a
 The frog can get scared by the squirrel that appears from the bushes so he can jump from
 scare!!!
 
-PROGRAMING LOGIC:
+**PROGRAMING LOGIC:**
 
 The main idea was to create a optimized, code efficient, readable and maintainable code.
 The main code is started on the main node of the game: GameScene. The GameScene is a coupled 
@@ -58,7 +58,6 @@ UIController - is a controller that controls the objects on the UI layer. He hol
 on the aspect ratio or resolution. 
 
 
-
 In the current code there are 2 singleton classes:
 AssetManagerSingleton - receives the base path for the textures folder in which he should look. He holds a cache of sprites he loads in a LRU principle, 
 so if we try to load the same assets, we will have them already cached for a certain amount of time. For additional checks, he can check if a file 
@@ -66,7 +65,6 @@ exists(can be used elsewhere beside the assets).
 
 GameSettings - singleton used for mostly getting some data factors from the current game such as scaled values, aspect ratio values,  etc. mostly
 dynamic calculated variables for device specific game environment.
-
 
 
 IResizableUI - interface that is the main skeleton for every button in the UI layer. Not incredibly usefull here, but can lead to scalable options,
@@ -81,14 +79,14 @@ GameConstants and GameEvents are static data holders that offer the system const
 
 
 
-DOD:
+**DOD:**
 
 The main goal of the code is in my opinion satisfied. The parallax scene is working and scrollable horizontally(by dragging it). The scene has 3 parallax layers: background, focus and foreground which have their speed and logic. The UI button is situated in the UI Layer and it has a functionality to trigger the jump event on the character.
 
 The CMake is updated to work with multiple platforms. 
 
 
-ISSUES AND PROBLEMS:
+**ISSUES AND PROBLEMS:**
 
 The problem I was facing was mostly with the android studio setup for cocosd2-x where I spent most of my time and finally wasn't able to test it directly through the android studio. By that I couldn't also test the resolutions and scales of different devices, so I improvised and created a sub scaleable system inside the system that would take the original designed resolution and scales objects in the specific calculated manner.
 

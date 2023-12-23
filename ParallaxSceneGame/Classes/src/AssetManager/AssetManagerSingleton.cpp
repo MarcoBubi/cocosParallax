@@ -1,47 +1,45 @@
-#include "AssetManagerSingleton.h"
+#include "AssetManager/AssetManagerSingleton.h"
 
 AssetManagerSingleton& AssetManagerSingleton::getInstance() {
     static AssetManagerSingleton instance;
     return instance;
 }
 
-AssetManagerSingleton::AssetManagerSingleton() : _maxCacheSize(5), _scaleFactor(1.0f) {
-
-    // Initialization code if needed
+AssetManagerSingleton::AssetManagerSingleton() : _maxCacheSize(5) {
+    // we setup a max cache of 5 just for the sake of the idea, since we are dealing with a low number of textures
 }
 
 AssetManagerSingleton::~AssetManagerSingleton() {
-    // Clean up code: release sprites and clear containers
+    // we release the sprites and clear the containers
     for (auto& pair : _spriteCache) {
-        pair.second.first->release(); // Assuming you have called retain on the sprite
+        pair.second.first->release(); // we retain each sprite, so we should release them too if they are not automatically released
     }
     _spriteCache.clear();
     _usageList.clear();
 }
 
 cocos2d::Sprite* AssetManagerSingleton::GetSprite(const std::string& filename) {
-    // Check if sprite is in the cache
+    // we check in the iterator if the file is already cached in the map
     auto mapIt = _spriteCache.find(filename);
     if (mapIt != _spriteCache.end()) {
-        // Move the touched sprite to the front of the usage list
+        // if no sprite found, we add to the begining - simulation of LRU, simple approach
+        // used splice because it just rearranges nodes, so it's a bit more optimized
         _usageList.splice(_usageList.begin(), _usageList, mapIt->second.second);
         return mapIt->second.first;
     }
     else {
-        // Load sprite and scale it based on current resolution
+        // we load the sprite with the concatenation of the texure path and the filename
         auto sprite = cocos2d::Sprite::create(_basePath + filename);
         
         if (!sprite) {
-            //I should probably throw something here, depending on the game type and behaviour - will leave like this for this scenario
+            // depending on scenario we can throw an error here
             return nullptr; // Failed to load sprite
         }
-        sprite->setName(filename);
-        // Perform scaling based on resolution
         sprite->retain(); // Retain the sprite as we are storing it in the cache
-        // ... 
 
-        // Insert sprite at the beginning of the usage list
+        // Insert sprite at the beginning of the usage list, LRU 
         _usageList.push_front(filename);
+        // add pair to spritecache
         _spriteCache[filename] = std::make_pair(sprite, _usageList.begin());
 
         // If cache exceeds size limit, remove the least recently used sprite
@@ -57,12 +55,6 @@ cocos2d::Sprite* AssetManagerSingleton::GetSprite(const std::string& filename) {
         }
         return sprite;
     }
-}
-
-void AssetManagerSingleton::UpdateResolution(float newScaleFactor) {
-    _scaleFactor = newScaleFactor;
-    // Update scale for all sprites in cache
-    // ...
 }
 
 void AssetManagerSingleton::setBasePath(const std::string& path)
@@ -83,5 +75,3 @@ bool AssetManagerSingleton::fileExists(const std::string& filename) const {
     std::string fullPath = _basePath + filename;
     return cocos2d::FileUtils::getInstance()->isFileExist(fullPath);
 }
-
-// Additional private helper methods implementation as needed

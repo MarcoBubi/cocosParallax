@@ -26,7 +26,6 @@
 cmake_minimum_required(VERSION 3.6)
 
 set(APP_NAME ParallaxSceneGame)
-
 project(${APP_NAME})
 
 if(XCODE)
@@ -55,11 +54,11 @@ if(APPLE OR WINDOWS)
 endif()
 
 # add cross-platforms source files and header files 
-file(GLOB GAME_SOURCE
-     Classes/*.cpp
+file(GLOB_RECURSE GAME_SOURCE
+     "${CMAKE_CURRENT_SOURCE_DIR}/Classes/src/*.cpp"
      )
-file(GLOB GAME_HEADER
-     Classes/*.h
+file(GLOB_RECURSE GAME_HEADER
+     "${CMAKE_CURRENT_SOURCE_DIR}/Classes/include/*.h"
      )
 
 if(ANDROID)
@@ -114,11 +113,15 @@ elseif(APPLE)
     list(APPEND GAME_SOURCE ${common_res_files})
 endif()
 
-# mark app complie info and libs info
+# mark app compile info and libs info
 set(all_code_files
     ${GAME_HEADER}
     ${GAME_SOURCE}
     )
+
+# Include directory
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/Classes/include")
+
 if(NOT ANDROID)
     add_executable(${APP_NAME} ${all_code_files})
 else()
@@ -129,7 +132,6 @@ endif()
 
 target_link_libraries(${APP_NAME} cocos2d)
 target_include_directories(${APP_NAME}
-        PRIVATE Classes
         PRIVATE ${COCOS2DX_ROOT_PATH}/cocos/audio/include/
 )
 

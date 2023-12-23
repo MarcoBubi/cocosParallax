@@ -22,8 +22,8 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#include "AppDelegate.h"
-#include "GameScene.h"
+#include "AppDelegate/AppDelegate.h"
+#include "Game/GameScene.h"
 
 // #define USE_AUDIO_ENGINE 1
 
@@ -91,7 +91,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);
     
-    // Set the design resolution //TODO: rethink this, for now let's set to full HD @mkrevatin
+    // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::NO_BORDER);
     auto frameSize = glview->getFrameSize();
     // if the frame's height is larger than the height of medium size.

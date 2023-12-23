@@ -5,9 +5,9 @@
 
 class IResizableUI {
 public:
-    virtual void adjustForResolution(const cocos2d::Size& size) = 0;
+    virtual ~IResizableUI() = default;
 
-    virtual ~IResizableUI() {}
+    virtual void adjustForResolution(const cocos2d::Size& size) = 0;
 };
 
 #endif // IRESIZABLEUI_H

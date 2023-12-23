@@ -85,6 +85,7 @@ cmake-build-*/
 *.swp
 *.swo
 tags
+build/
 
 # Project specific ignores
 projects/

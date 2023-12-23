@@ -1,9 +1,10 @@
 #ifndef PARALLAXCONTROLLER_H
 #define PARALLAXCONTROLLER_H
 
-#include "IController.h"
+#include "Interfaces/IController.h"
 #include <map>
 #include <string>
+#include <cocos2d.h>
 
 class ParallaxController : public IController {
 public:
@@ -13,7 +14,13 @@ public:
         Foreground
     };
 
-    explicit ParallaxController(cocos2d::Node* parent, cocos2d::EventDispatcher& eventDispatcher);
+    ParallaxController(cocos2d::Node* parent, cocos2d::EventDispatcher& eventDispatcher);
+    virtual ~ParallaxController();
+
+    ParallaxController(const ParallaxController&) = delete;
+    ParallaxController& operator=(const ParallaxController&) = delete;
+    ParallaxController(ParallaxController&&) = delete;
+    ParallaxController& operator=(ParallaxController&&) = delete;
 
     void setup() override;
     void update(float delta) override;
@@ -29,7 +36,6 @@ private:
     cocos2d::Node* _parent;
     cocos2d::EventDispatcher& _eventDispatcher;
     std::map<ParallaxLayer, cocos2d::ParallaxNode*> _parallaxNodes;
-    // highest z order per layer - I don't like this approach, but it's important to have it imo @mkrevatin
     std::map<ParallaxLayer, int> _highestZOrders;
 
     void onSceneDragged(cocos2d::EventCustom* event);

@@ -4,10 +4,31 @@
     <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\AssetManagerSingleton.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\CharacterController.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\CustomUIButton.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\GameConstants.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\GameEvents.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\GameScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\InputController.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\ParallaxController.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\UIController.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\proj.win32\main.cpp">
@@ -16,33 +37,42 @@
     <ClCompile Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\AssetManagerSingleton.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\ParallaxController.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CharacterController.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\InputController.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\UIController.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CustomUIButton.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\HelloWorldScene.h">
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\AssetManagerSingleton.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\CharacterController.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\CustomUIButton.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\GameConstants.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\GameEvents.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\GameScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\IController.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\IResizableUI.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\InputController.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\ParallaxController.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Classes\UIController.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\proj.win32\main.h">
@@ -69,12 +99,6 @@
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_10_trees.png">
-      <Filter>Resources\textures</Filter>
-    </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_11_road.png">
-      <Filter>Resources\textures</Filter>
-    </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_1_sky.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
@@ -93,7 +117,10 @@
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_6_clouds.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_8_bushes.png">
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_7_bushes.png">
+      <Filter>Resources\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_8_trees.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\background_9_trees.png">
@@ -102,19 +129,22 @@
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\character.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_0_squirrel.png">
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\focus_1_road.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_1_bushes.png">
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_1_clouds.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_2_tree.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_3_clouds.png">
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_3_squirrel.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_4_bench.png">
+      <Filter>Resources\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\foreground_5_bushes.png">
       <Filter>Resources\textures</Filter>
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\jump_button.png">
@@ -125,34 +155,6 @@
     </ClInclude>
     <ClInclude Include="D:\Projects\tamatem_cocos2d-x\cocosParallax\ParallaxSceneGame\Resources\textures\jump_button_inactive.png">
       <Filter>Resources\textures</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\AssetManagerSingleton.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\ParallaxController.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="IController.h" />
-    <ClInclude Include="..\Classes\IController.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CharacterController.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\InputController.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\GameEventType.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\UIController.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\IResizableUI.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CustomUIButton.h">
-      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

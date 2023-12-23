@@ -1,19 +1,18 @@
 #ifndef __GAME_SCENE_H__
 #define __GAME_SCENE_H__
 
+#include "Controllers/UIController.h"
+#include "Controllers/InputController.h"
+#include "Controllers/ParallaxController.h"
+#include "Controllers/CharacterController.h"
+#include "AssetManager/AssetManagerSingleton.h"
 #include "cocos2d.h"
-#include "UIController.h"
-#include "InputController.h"
-#include "ParallaxController.h"
-#include "CharacterController.h"
+#include <memory>
 
 class GameScene : public cocos2d::Scene {
 public:
     static cocos2d::Scene* createScene();
-
     virtual bool init();
-
-    // so I remove boilerplate code @mkrevatin
     CREATE_FUNC(GameScene);
 
 private:

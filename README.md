@@ -92,7 +92,25 @@ The problem I was facing was mostly with the android studio setup for cocosd2-x 
 
 
 
+UPDATE:
 
+	Added the functionality for the character selection menu.
+	The main game has a new parallax layer(node) for the UI that is positioned on the screen.
+	A new button is added to that new paralax layer which can be seen when the screen is scrolled to the right.
+	When pressing the button, a character selection view should be displayed with a blocking layer that works
+	as a clickblocker.
+
+	The character selection view(menu) let's us iterate through the character images and let's us select one for our cause.
+	To exit the character selection view, there are 2 options: the X button that will close the windows after a small scale down animation,
+	or the submit button that will close the window after a small down animation and will take the currently selected image and it will
+	update the character node sprite on the screen. 
+
+	This is a simple MVC principle(mostly MC-V) since Model and Controller are tightly coupled since the data is minimal, so the decoupling of them
+	would result in a complex system for no reason.
+	The view knows about the controller, so different views may affect the controller. The controller is notified of the changes and changes the logic.
+	On the submit change, the controller broadcasts a message that the character controller picks up and updates the current sprites.
+
+	More data is added and some small refactors were applied.
 
 
 

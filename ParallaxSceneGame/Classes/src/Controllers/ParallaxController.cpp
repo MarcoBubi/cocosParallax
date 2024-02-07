@@ -6,12 +6,6 @@
 
 ParallaxController::ParallaxController(cocos2d::Node* parent, cocos2d::EventDispatcher& eventDispatcher)
     : _parent(parent), _eventDispatcher(eventDispatcher) {
-    // Initialization can be performed here if needed
-}
-
-ParallaxController::~ParallaxController()
-{
-
 }
 
 void ParallaxController::setup() {
@@ -26,6 +20,8 @@ void ParallaxController::setup() {
     _parallaxNodes[ParallaxLayer::Background] = cocos2d::ParallaxNode::create();
     _parallaxNodes[ParallaxLayer::Focus] = cocos2d::ParallaxNode::create();
     _parallaxNodes[ParallaxLayer::Foreground] = cocos2d::ParallaxNode::create();
+    _parallaxNodes[ParallaxLayer::Scrollable_UI] = cocos2d::ParallaxNode::create();
+    _parallaxNodes[ParallaxLayer::Scrollable_UI]->setLocalZOrder(GameConstants::SCROLLABLE_UI_LAYER_Z_ORDER);
 
     // Add nodes to parent
     for (auto& pair : _parallaxNodes) {
@@ -73,6 +69,30 @@ void ParallaxController::addSpriteToLayerWithAutoZOrder(const std::string& filen
     // If we don't specify the z order we just add it to the last added
     int nextZOrder = _highestZOrders[layer] + 1;
     addSpriteToLayer(filename, layer, ratio, position, nextZOrder);
+}
+
+void ParallaxController::addNodeToLayerWithAutoZOrder(cocos2d::Node* node, ParallaxLayer layer, const cocos2d::Vec2& ratio, const cocos2d::Vec2& originalPosition) {
+    int nextZOrder = _highestZOrders[layer] + 1;
+    addNodeToLayer(node, layer, ratio, originalPosition, nextZOrder);
+}
+
+void ParallaxController::addNodeToLayer(cocos2d::Node* node, ParallaxLayer layer, const cocos2d::Vec2& ratio, const cocos2d::Vec2& originalPosition, int zOrder) {
+    if (!node) {
+        throw std::runtime_error("Node provided can't be null!"); // same logic as for the sprite part
+    }
+
+    // If the node is a Sprite, scale it according to the current resolution
+    if (auto sprite = dynamic_cast<cocos2d::Sprite*>(node)) {
+        scaleSpriteForCurrentResolution(*sprite);
+        sprite->setAnchorPoint(cocos2d::Vec2(0.5f, 0.0f)); // Anchor for sprites in a horizontal parallax system
+    }
+    // For other node types, you may set a different anchor point if necessary
+
+    float scaleFactorHeight = GameSettings::getInstance().getScaleFactorHeight(); // same logic as above
+    cocos2d::Vec2 scaledPosition(originalPosition.x, originalPosition.y * scaleFactorHeight);
+
+    _parallaxNodes[layer]->addChild(node, zOrder, ratio, scaledPosition);
+    _highestZOrders[layer] = std::max(_highestZOrders[layer], zOrder);
 }
 
 cocos2d::ParallaxNode* ParallaxController::getParallaxNode(ParallaxLayer layer) {

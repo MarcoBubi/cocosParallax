@@ -5,7 +5,9 @@
 #include "Controllers/InputController.h"
 #include "Controllers/ParallaxController.h"
 #include "Controllers/CharacterController.h"
+#include "Controllers/CharacterSelectionController.h"
 #include "AssetManager/AssetManagerSingleton.h"
+#include "View/CharacterSelectionView.h"
 #include "cocos2d.h"
 #include <memory>
 
@@ -20,6 +22,10 @@ private:
     std::unique_ptr<InputController> _inputController;
     std::unique_ptr<ParallaxController> _parallaxController;
     std::unique_ptr<CharacterController> _characterController;
+    std::unique_ptr<CharacterSelectionController> _characterSelectionController;
+    
+    std::unique_ptr<CharacterSelectionView> _characterSelectionView;
+    cocos2d::Sprite* _characterSprite; // raw ptr because of cocos2d::Ref
 };
 
 #endif // __GAME_SCENE_H__

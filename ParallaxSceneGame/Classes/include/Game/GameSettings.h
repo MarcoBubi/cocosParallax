@@ -21,6 +21,7 @@ private:
 
     GameSettings(const GameSettings&) = delete;
     GameSettings(GameSettings&&) = delete;
+
     GameSettings& operator=(const GameSettings&) = delete;
     GameSettings& operator=(GameSettings&&) = delete;
 

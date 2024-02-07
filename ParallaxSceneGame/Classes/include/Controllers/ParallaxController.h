@@ -11,11 +11,12 @@ public:
     enum class ParallaxLayer {
         Background,
         Focus,
-        Foreground
+        Foreground,
+        Scrollable_UI
     };
 
     ParallaxController(cocos2d::Node* parent, cocos2d::EventDispatcher& eventDispatcher);
-    virtual ~ParallaxController();
+    virtual ~ParallaxController() = default;
 
     ParallaxController(const ParallaxController&) = delete;
     ParallaxController& operator=(const ParallaxController&) = delete;
@@ -27,6 +28,10 @@ public:
 
     void addSpriteToLayer(const std::string& filename, ParallaxLayer layer, const cocos2d::Vec2& ratio, const cocos2d::Vec2& position, int zOrder);
     void addSpriteToLayerWithAutoZOrder(const std::string& filename, ParallaxLayer layer, const cocos2d::Vec2& ratio, const cocos2d::Vec2& position);
+
+    // New method for adding any cocos2d::Node to a parallax layer
+    void addNodeToLayer(cocos2d::Node* node, ParallaxLayer layer, const cocos2d::Vec2& ratio, const cocos2d::Vec2& position, int zOrder);
+    void addNodeToLayerWithAutoZOrder(cocos2d::Node* node, ParallaxLayer layer, const cocos2d::Vec2& ratio, const cocos2d::Vec2& originalPosition);
 
     cocos2d::ParallaxNode* getParallaxNode(ParallaxLayer layer);
 

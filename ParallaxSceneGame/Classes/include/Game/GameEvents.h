@@ -3,7 +3,8 @@
 
 class GameEvents {
 public:
-    static const char* EVENT_UI_BUTTON_JUMP_PRESSED;
+    static const char* EVENT_UI_BUTTON_JUMP_PRESSED; 
+    static const char* EVENT_CHARACTER_AVATAR_CHANGED;
     static const char* EVENT_SCENE_DRAGGED;
 };
 

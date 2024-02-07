@@ -123,3 +123,4 @@ temp/
 metal-support*.zip
 /build/
 cocos2d
+*/proj.*

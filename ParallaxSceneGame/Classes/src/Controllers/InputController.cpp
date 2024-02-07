@@ -1,5 +1,6 @@
 #include "Controllers/InputController.h"
 #include "Game/GameEvents.h"
+#include "Game/GameEventsPriority.h"
 #include "ui/CocosGUI.h"
 
 InputController::InputController(cocos2d::Node* parent, cocos2d::EventDispatcher& eventDispatcher)
@@ -37,7 +38,7 @@ void InputController::setupTouchListener() {
     _touchListener->onTouchBegan = CC_CALLBACK_2(InputController::onTouchBegan, this);
     _touchListener->onTouchMoved = CC_CALLBACK_2(InputController::onTouchMoved, this);
 
-    _parent->getEventDispatcher()->addEventListenerWithSceneGraphPriority(_touchListener, _parent);
+    _parent->getEventDispatcher()->addEventListenerWithFixedPriority(_touchListener, GameEventsPriority::Low);
 }
 
 bool InputController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event) {
